@@ -20,12 +20,7 @@ class Users(db.Model):
     amount = db.Column(db.String(120), nullable=False)
 
 
-
-@app.route('/', methods=['GET'])
-def HOME():
-    return "Home"
-
-@app.route('/2', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def hello():
     if request.method=="POST":
         email=request.form.get('email')
@@ -58,7 +53,6 @@ def success():
 
 
 if __name__=='__main__':
-    app.debug=True
     db.create_all()
     app.run(port=5000)
 
