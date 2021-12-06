@@ -21,8 +21,11 @@ class Users(db.Model):
 
 
 
+@app.route('/', methods=['GET'])
+def HOME():
+    return "Home"
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/2', methods=['GET', 'POST'])
 def hello():
     if request.method=="POST":
         email=request.form.get('email')
